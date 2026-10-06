@@ -6,7 +6,7 @@
 
 ### 🔹 Cenário 1: Aplicação de cupom válido com sucesso
 **BDD / Gherkin:**
-```gherkin```
+```gherkin
 Dado que o subtotal do carrinho é de R$ 100,00
 Quando o cliente aplica o cupom "BEMVINDO10"
 Então deve ser concedido 10% de desconto sobre o subtotal
