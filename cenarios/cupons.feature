@@ -14,6 +14,14 @@ Funcionalidade: Regra de Cupons de Desconto
     Então deve ser concedido 10% de desconto sobre o subtotal
     E o valor do desconto deve ser R$ 10,00
 
+    * **Status:** Passou ✅
+<details>
+<summary><b>🔍 Clique para expandir a evidência do Cenário 1</b></summary>
+
+![Cenário 1](cenario-01-cupom-valido.png)
+
+</details>
+
   Cenário 2: Aplicação de cupom com letras minúsculas e espaços
     Dado que o subtotal do carrinho é de R$ 100,00
     Quando o cliente digita o cupom "  bemvindo10  "
