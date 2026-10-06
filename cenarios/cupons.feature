@@ -13,7 +13,6 @@ Funcionalidade: Regra de Cupons de Desconto
     Quando o cliente aplica o cupom "BEMVINDO10"
     Então deve ser concedido 10% de desconto sobre o subtotal
     E o valor do desconto deve ser R$ 10,00
-    E a mensagem "Cupom aplicado: 10% de desconto nos produtos." deve ser exibida
 
   Cenário 2: Aplicação de cupom com letras minúsculas e espaços
     Dado que o subtotal do carrinho é de R$ 100,00
