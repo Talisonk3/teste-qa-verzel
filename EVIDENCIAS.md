@@ -17,7 +17,7 @@
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 1</b></summary>
 
-![Evidência Cenário 1](cenario-01-cupom-valido.png)
+![Evidência Cenário 1](evidencias/cenario-01-cupom-valido.png)
 
 </details>
 
@@ -35,7 +35,7 @@
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 2</b></summary>
 
-![Evidência Cenário 2](cenario-02-cupom-minusculas-espacos.gif)
+![Evidência Cenário 2](evidencias/cenario-02-cupom-minusculas-espacos.gif)
 
 </details>
 
@@ -53,7 +53,7 @@
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 3</b></summary>
 
-![Evidência Cenário 3](cenario-03-cupom-inexistente.png)
+![Evidência Cenário 3](evidencias/cenario-03-cupom-inexistente.png)
 
 </details>
 
@@ -71,7 +71,7 @@
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 4</b></summary>
 
-![Evidência Cenário 4](cenario-04-cupom-expirado.png)
+![Evidência Cenário 4](evidencias/cenario-04-cupom-expirado.png)
 
 </details>
 
@@ -90,6 +90,6 @@
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 5</b></summary>
 
-![Evidência Cenário 5](cenario-05-remocao-cupom.gif)
+![Evidência Cenário 5](evidencias/cenario-05-remocao-cupom.gif)
 
 </details>
