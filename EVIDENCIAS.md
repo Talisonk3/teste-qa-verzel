@@ -1,56 +1,13 @@
-# 📸 Evidências de Execução dos Testes Manuais - Verzel Store
+# 📸 Relatório de Execução e Evidências de Testes - Verzel Store
 
-## 🎟️ Cenários de Cupons de Desconto
-
-### Cenário 1: Aplicação de cupom válido com sucesso
-* **Status:** Passou ✅
-<details>
-<summary><b>🔍 Clique para expandir a evidência do Cenário 1</b></summary>
-
-![Cenário 1](cenario-01-cupom-valido.png)
-
-</details>
+## 🎟️ Regra de Cupons de Desconto (Card VZS-142)
 
 ---
 
-### Cenário 2: Aplicação de cupom com letras minúsculas e espaços
-* **Status:** Passou ✅
-<details>
-<summary><b>🔍 Clique para expandir a evidência do Cenário 2</b></summary>
-
-![Cenário 2](cenario-02-cupom-minusculas-espacos.gif)
-
-</details>
-
----
-
-### Cenário 3: Tentativa de aplicação de cupom inexistente
-* **Status:** Passou ✅
-<details>
-<summary><b>🔍 Clique para expandir a evidência do Cenário 3</b></summary>
-
-![Cenário 3](cenario-03-cupom-inexistente.png)
-
-</details>
-
----
-
-### Cenário 4: Tentativa de aplicação de cupom expirado
-* **Status:** Passou ✅
-<details>
-<summary><b>🔍 Clique para expandir a evidência do Cenário 4</b></summary>
-
-![Cenário 4](cenario-04-cupom-expirado.png)
-
-</details>
-
----
-
-### Cenário 5: Remoção do cupom aplicado no carrinho
-* **Status:** Passou ✅
-<details>
-<summary><b>🔍 Clique para expandir a evidência do Cenário 5</b></summary>
-
-![Cenário 5](cenario-05-remocao-cupom.gif)
-
-</details>
+### 🔹 Cenário 1: Aplicação de cupom válido com sucesso
+**BDD / Gherkin:**
+```gherkin
+Dado que o subtotal do carrinho é de R$ 100,00
+Quando o cliente aplica o cupom "BEMVINDO10"
+Então deve ser concedido 10% de desconto sobre o subtotal
+E o valor do desconto deve ser R$ 10,00
