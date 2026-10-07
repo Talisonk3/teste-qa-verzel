@@ -96,7 +96,6 @@
 
 ---
 
----
 
 ### 🔹 Cenário 6: Cálculo de frete para compras abaixo de R$ 200,00
 
@@ -113,10 +112,6 @@
 ![Evidência Cenário 6](evidencias/cenario-06-frete-carrinho-abaixo-limite.png)
 
 </details>
-
----
-
----
 
 ---
 
@@ -155,3 +150,23 @@
 ![Evidência Cenário 8](evidencias/cenario-08-incidencia-cupom-desconto.png)
 
 </details>
+
+---
+
+## 🧪 Execução de Testes de API (Postman)
+
+### **Cenário 09: Validação do Limite de Unidades por Produto**
+- **Endpoint:** `POST /api/carrinho/calcular`
+- **Objetivo:** Validar o comportamento da API ao solicitar a quantidade máxima permitida (6 unidades) de um item.
+- **Payload Enviado:**
+  ```json
+  {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 6
+      }
+    ]
+  }
+
+  
