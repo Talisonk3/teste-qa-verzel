@@ -44,7 +44,7 @@ O campo **Frete** continua exibindo a cobrança normal do frete, sem zerar o val
 
 ![Evidência do Bug](./evidencias/cenario-07-frete-gratis-acima-limite.gif)
 
-</details>,00)
+</details>
 
 ---
 
