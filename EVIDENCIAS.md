@@ -192,7 +192,50 @@
     "total": 359.4,
     "cupom": null
   }
-### **Cenário 10: Confirmação de Pedido com Sucesso**
+
+  ---
+### Cenário 10: Tentativa de Adicionar Quantidade Acima do Limite Permitido
+
+* **Endpoint:** `POST /api/carrinho/calcular`
+* **Objetivo:** Validar o bloqueio da API ao solicitar uma quantidade acima do limite permitido (7 unidades).
+* **Payload Enviado:**
+
+  ```json
+  {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 7
+      }
+    ]
+  }
+  
+* **Status Code:** `200 OK`
+* **Resultado:** Reprovado ❌ (Bug: A API aceitou a quantidade acima do limite sem retornar erro)
+* **Resposta da API:**
+
+  ```json
+  {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 7,
+        "total": 419.3
+      }
+    ],
+    "subtotal": 419.3,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 419.3,
+    "cupom": null
+  }
+  
+  ```
+### **Cenário 11: Confirmação de Pedido com Sucesso**
 * **Endpoint:** `POST /api/pedidos`
 * **Objetivo:** Criar e confirmar um novo pedido enviando os dados válidos do cliente e os itens do carrinho.
 * **Payload Enviado:**
@@ -242,8 +285,40 @@
       "cupom": null
     }
   }
+  
+---
+   ### Cenário 12: Tentativa de Criar Pedido sem E-mail do Cliente
+* **Endpoint:** `POST /api/pedidos`
+* **Objetivo:** Validar o bloqueio da API ao tentar criar um pedido omitindo o e-mail obrigatório do cliente.
+* **Payload Enviado:**
 
-### **Cenário 11: Aplicação de Cupom Válido no Carrinho**
+  ```json
+  {
+    "cliente": {
+      "nome": "Talison Brito",
+      "cep": "60000000"
+    },
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      }
+    ]
+  }
+  {
+  "erro": {
+    "codigo": "DADOS_INVALIDOS",
+    "mensagem": "Existem campos inválidos no pedido.",
+    "campos": [
+      {
+        "campo": "cliente.email",
+        "mensagem": "Informe o e-mail."
+      }
+    ]
+  }
+
+---
+### **Cenário 13: Aplicação de Cupom Válido no Carrinho**
 * **Endpoint:** `POST /api/carrinho/calcular`
 * **Objetivo:** Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
 * **Payload Enviado:**
@@ -285,7 +360,8 @@
     }
   }
 
-### **Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado**
+---
+### **Cenário 14: Tentativa de Confirmação de Pedido com Cupom Expirado**
 * **Endpoint:** `POST /api/pedidos`
 * **Objetivo:** Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
 * **Payload Enviado:**
