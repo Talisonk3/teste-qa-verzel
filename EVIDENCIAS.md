@@ -243,10 +243,10 @@
     }
   }
 
-```Cenário 11: Aplicação de Cupom Válido no Carrinho
--* Endpoint: `POST /api/carrinho/calcular`
--* Objetivo: Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
--* Payload Enviado:
+### **Cenário 11: Aplicação de Cupom Válido no Carrinho**
+* **Endpoint:** `POST /api/carrinho/calcular`
+* **Objetivo:** Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
+* **Payload Enviado:**
 ```json
 {
   "itens": [
@@ -257,7 +257,7 @@
   ],
   "cupom": "BEMVINDO10"
 }
-
+```
 * **Status Code:** `200 OK`
 * **Resultado:** Sucesso ✅
 * **Resposta da API:**
@@ -284,8 +284,8 @@
       "aplicado": true
     }
   }
-```
-Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado
+
+### **Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado**
 * Endpoint: `POST /api/pedidos`
 * Objetivo: Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
 * Payload Enviado:
@@ -304,3 +304,15 @@ Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado
   ],
   "cupom": "VERAO2026"
 }
+```
+* **Status Code:** `422 Unprocessable Entity`
+* **Resultado:** Sucesso ✅
+* **Resposta da API:**
+```json
+  {
+    "erro": {
+      "codigo": "CUPOM_EXPIRADO",
+      "mensagem": "Cupom expirado.",
+      "campo": "cupom"
+    }
+  }
