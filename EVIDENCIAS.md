@@ -120,7 +120,7 @@
 
 ---
 
-### 🔹 Cenário 7: Regra de frete grátis para compras de R$ 200,00 (Valor Limite)
+### 🔹 Cenário 7: Validação da regra de frete grátis para compras de valor igual ou superior a R$ 200,00
 
 **BDD / Gherkin:**
 - Dado que o subtotal do carrinho atinge exatamente R$ 200,00 (2 itens de R$ 100,00)
