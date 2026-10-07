@@ -169,11 +169,33 @@
     ]
   }
 
+* **Status Code:** `200 OK`
+* **Resultado:** Sucesso ✅
+* **Resposta da API:**
 
-Cenário 10: Confirmação de Pedido com Sucesso
-* Endpoint: `POST /api/pedidos`
-* Objetivo: Criar e confirmar um novo pedido enviando os dados válidos do cliente e os itens do carrinho.
-* Payload Enviado:
+  ```json
+  {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 6,
+        "total": 359.4
+      }
+    ],
+    "subtotal": 359.4,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 359.4,
+    "cupom": null
+  }
+### **Cenário 10: Confirmação de Pedido com Sucesso**
+* **Endpoint:** `POST /api/pedidos`
+* **Objetivo:** Criar e confirmar um novo pedido enviando os dados válidos do cliente e os itens do carrinho.
+* **Payload Enviado:**
 ```json
 {
   "cliente": {
@@ -190,9 +212,9 @@ Cenário 10: Confirmação de Pedido com Sucesso
 }
 ```
 Cenário 11: Aplicação de Cupom Válido no Carrinho
-* Endpoint: `POST /api/carrinho/calcular`
-* Objetivo: Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
-* Payload Enviado:
+-* Endpoint: `POST /api/carrinho/calcular`
+-* Objetivo: Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
+-* Payload Enviado:
 ```json
 {
   "itens": [
@@ -203,6 +225,33 @@ Cenário 11: Aplicação de Cupom Válido no Carrinho
   ],
   "cupom": "BEMVINDO10"
 }
+
+* **Status Code:** `200 OK`
+* **Resultado:** Sucesso ✅
+* **Resposta da API:**
+
+  ```json
+  {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 1,
+        "total": 59.9
+      }
+    ],
+    "subtotal": 59.9,
+    "desconto": 5.99,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 140.1,
+    "total": 73.81,
+    "cupom": {
+      "codigo": "BEMVINDO10",
+      "aplicado": true
+    }
+  }
 ```
 Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado
 * Endpoint: `POST /api/pedidos`
