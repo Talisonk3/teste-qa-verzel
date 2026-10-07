@@ -20,9 +20,9 @@ Funcionalidade: Regra de Frete Grátis
     Então o valor do frete deve ser de R$ 19,90
     E o sistema deve informar que faltam R$ 100,00 para frete grátis
 
-  Cenário 8: Frete grátis considera o subtotal antes do desconto do cupom
-    Dado que o cliente possui produtos no carrinho com subtotal de R$ 200,00
-    Quando o cliente aplica o cupom "BEMVINDO10"
-    Então o valor do desconto aplicado deve ser de R$ 20,00
-    E o subtotal com desconto passa a ser R$ 180,00
-    Mas o valor do frete deve permanecer R$ 0,00 (frete grátis)
+  Cenário 8: Cupom de desconto incide apenas sobre o valor dos produtos
+    Dado que o cliente possui produtos no carrinho com subtotal de R$ 100,00
+    E o valor do frete calculado é de R$ 19,90
+    Quando o cliente aplica o cupom de 10% "BEMVINDO10"
+    Então o valor do desconto deve ser de R$ 10,00 (incidindo apenas sobre os R$ 100,00 dos produtos)
+    E o valor do frete deve permanecer em R$ 19,90 sem alterações
