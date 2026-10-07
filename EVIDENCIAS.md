@@ -118,14 +118,16 @@
 
 ---
 
-### 🔹 Cenário 7: Aplicação de frete grátis para compras acima de R$ 200,00
+---
+
+### 🔹 Cenário 7: Regra de frete grátis para compras de R$ 200,00 (Valor Limite)
 
 **BDD / Gherkin:**
-- Dado que o subtotal do carrinho é superior a R$ 200,00
-- Quando o frete é calculated
-- Então o valor do frete deve ser R$ 0,00 (Grátis)
+- Dado que o subtotal do carrinho atinge exatamente R$ 200,00 (2 itens de R$ 100,00)
+- Quando o valor do frete é calculado
+- Então o valor do frete deve ser R$ 0,00 (Grátis) conforme a regra de valor igual ou superior a R$ 200,00
 
-* **Resultado:** Sucesso ✅
+* **Resultado:** Falha ❌ (Bug de Valor Limite - O sistema cobra frete com subtotal de R$ 200,00)
 
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 7</b></summary>
@@ -136,14 +138,16 @@
 
 ---
 
-### 🔹 Cenário 8: Aplicação de frete grátis para valor exatamente igual a R$ 200,00
+### 🔹 Cenário 8: Incidência do cupom de desconto exclusivamente sobre o valor dos produtos
 
 **BDD / Gherkin:**
-- Dado que o subtotal do carrinho é exatamente R$ 200,00
-- Quando o frete é calculado
-- Então o valor do frete deve ser R$ 0,00 (Grátis)
+- Dado que o carrinho contém um produto de R$ 100,00 e o frete é R$ 19,90
+- Quando o cliente aplica o cupom de 10% "BEMVINDO10"
+- Então o desconto de R$ 10,00 deve incidir apenas sobre os R$ 100,00 do produto
+- E o valor do frete deve permanecer em R$ 19,90
+- E o total recalculado deve ser R$ 109,90
 
-* **Resultado:** Falha ❌ (Bug de Valor Limite)
+* **Resultado:** Sucesso ✅
 
 <details>
 <summary><b>🔍 Clique aqui para expandir a evidência do Cenário 8</b></summary>
