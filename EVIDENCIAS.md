@@ -305,6 +305,10 @@
       }
     ]
   }
+* **Status Code:** `201 Created`
+* **Resultado:** Sucesso ✅
+* **Resposta da API:**
+ ```json
   {
   "erro": {
     "codigo": "DADOS_INVALIDOS",
@@ -316,7 +320,7 @@
       }
     ]
   }
-
+ ```
 ---
 ### **Cenário 13: Aplicação de Cupom Válido no Carrinho**
 * **Endpoint:** `POST /api/carrinho/calcular`
