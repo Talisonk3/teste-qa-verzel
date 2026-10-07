@@ -96,18 +96,56 @@
 
 ---
 
-### Cenário 6: Cálculo de frete para compras abaixo de R$ 200,00
-**Status:** 🟢 Aprovado
-![Cenário 06](./evidencias/cenario-06-frete-carrinho-abaixo-limite.png)
+---
+
+### 🔹 Cenário 6: Cálculo de frete para compras abaixo de R$ 200,00
+
+**BDD / Gherkin:**
+- Dado que o subtotal do carrinho é inferior a R$ 200,00
+- Quando o valor do frete é calculado
+- Então o valor do frete deve ser cobrado normalmente
+
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>🔍 Clique aqui para expandir a evidência do Cenário 6</b></summary>
+
+![Evidência Cenário 6](evidencias/cenario-06-frete-carrinho-abaixo-limite.png)
+
+</details>
 
 ---
 
-### Cenário 7: Aplicação de frete grátis para compras acima de R$ 200,00
-**Status:** 🟢 Aprovado
-![Cenário 07](./evidencias/cenario-07-frete-gratis-acima-limite.png)
+### 🔹 Cenário 7: Aplicação de frete grátis para compras acima de R$ 200,00
+
+**BDD / Gherkin:**
+- Dado que o subtotal do carrinho é superior a R$ 200,00
+- Quando o frete é calculado
+- Então o valor do frete deve ser R$ 0,00 (Grátis)
+
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>🔍 Clique aqui para expandir a evidência do Cenário 7</b></summary>
+
+![Evidência Cenário 7](evidencias/cenario-07-frete-gratis-acima-limite.png)
+
+</details>
 
 ---
 
-### Cenário 8: Aplicação de frete grátis para valor exatamente igual a R$ 200,00
-**Status:** 🔴 Reprovado (Bug de Valor Limite)
-![Cenário 08](./evidencias/cenario-08-frete-limite-exato-200.png)
+### 🔹 Cenário 8: Aplicação de frete grátis para valor exatamente igual a R$ 200,00
+
+**BDD / Gherkin:**
+- Dado que o subtotal do carrinho é exatamente R$ 200,00
+- Quando o frete é calculado
+- Então o valor do frete deve ser R$ 0,00 (Grátis)
+
+* **Resultado:** Falha ❌ (Bug de Valor Limite)
+
+<details>
+<summary><b>🔍 Clique aqui para expandir a evidência do Cenário 8</b></summary>
+
+![Evidência Cenário 8](evidencias/cenario-08-frete-limite-exato-200.png)
+
+</details>
