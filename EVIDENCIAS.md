@@ -93,3 +93,21 @@
 ![Evidência Cenário 5](evidencias/cenario-05-remocao-cupom.gif)
 
 </details>
+
+---
+
+### Cenário 6: Cálculo de frete para compras abaixo de R$ 200,00
+**Status:** 🟢 Aprovado
+![Cenário 06](./evidencias/cenario-06-frete-carrinho-abaixo-limite.png)
+
+---
+
+### Cenário 7: Aplicação de frete grátis para compras acima de R$ 200,00
+**Status:** 🟢 Aprovado
+![Cenário 07](./evidencias/cenario-07-frete-gratis-acima-limite.png)
+
+---
+
+### Cenário 8: Aplicação de frete grátis para valor exatamente igual a R$ 200,00
+**Status:** 🔴 Reprovado (Bug de Valor Limite)
+![Cenário 08](./evidencias/cenario-08-frete-limite-exato-200.png)
