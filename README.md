@@ -22,8 +22,8 @@ Validação funcional, exploratória e de API da história de usuário **VZS-142
 | :--- | :--- | :---: |
 | **Regra de Cupons** | UI / Manual | 5 |
 | **Regra de Frete Grátis** | UI / Manual | 3 |
-| **Validação de API & Limites** | API / Backend | 4 |
-| **TOTAL DE CENÁRIOS** | — | **12** |
+| **Validação de API & Limites** | API / Backend | 6 |
+| **TOTAL DE CENÁRIOS** | — | **14** |
 
 ---
 
