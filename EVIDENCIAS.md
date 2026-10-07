@@ -169,4 +169,57 @@
     ]
   }
 
-  
+
+Cenário 10: Confirmação de Pedido com Sucesso
+* Endpoint: `POST /api/pedidos`
+* Objetivo: Criar e confirmar um novo pedido enviando os dados válidos do cliente e os itens do carrinho.
+* Payload Enviado:
+```json
+{
+  "cliente": {
+    "nome": "Talison Brito",
+    "email": "talison@email.com",
+    "cep": "60000000"
+  },
+  "itens": [
+    {
+      "produtoId": "P001",
+      "quantidade": 1
+    }
+  ]
+}
+```
+Cenário 11: Aplicação de Cupom Válido no Carrinho
+* Endpoint: `POST /api/carrinho/calcular`
+* Objetivo: Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
+* Payload Enviado:
+```json
+{
+  "itens": [
+    {
+      "produtoId": "P001",
+      "quantidade": 1
+    }
+  ],
+  "cupom": "BEMVINDO10"
+}
+```
+Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado
+* Endpoint: `POST /api/pedidos`
+* Objetivo: Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
+* Payload Enviado:
+```json
+{
+  "cliente": {
+    "nome": "Talison Brito",
+    "email": "talison@email.com",
+    "cep": "60000000"
+  },
+  "itens": [
+    {
+      "produtoId": "P001",
+      "quantidade": 1
+    }
+  ],
+  "cupom": "VERAO2026"
+}
