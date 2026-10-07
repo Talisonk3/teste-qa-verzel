@@ -36,8 +36,15 @@ O campo **Frete** continua exibindo a cobrança normal do frete, sem zerar o val
 ---
 
 ### 📸 Evidência do Bug
-* **Arquivo da Mídia:** `./evidencias/cenario-07-frete-gratis-acima-limite.gif`
+
 * **Cenário de Teste Relacionado:** Cenário 7 (Validação da regra de frete grátis para compras de valor igual ou superior a R$ 200,00)
+
+<details>
+<summary><b>🔍 Clique aqui para expandir a evidência do Bug</b></summary>
+
+![Evidência do Bug](./evidencias/cenario-07-frete-gratis-acima-limite.gif)
+
+</details>,00)
 
 ---
 
