@@ -211,7 +211,39 @@
   ]
 }
 ```
-Cenário 11: Aplicação de Cupom Válido no Carrinho
+* **Status Code:** `201 Created`
+* **Resultado:** Sucesso ✅
+* **Resposta da API:**
+  ```json
+
+  {
+    "mensagem": "Pedido criado com sucesso.",
+    "pedido": {
+      "numero": "VZ-155656",
+      "status": "CONFIRMADO",
+      "cliente": {
+        "nome": "Talison Brito",
+        "email": "talison@email.com",
+        "cep": "60000000"
+      },
+      "itens": [
+        {
+          "produtoId": "P001",
+          "nome": "Camiseta Essencial",
+          "quantidade": 1,
+          "precoUnitario": 59.9,
+          "total": 59.9
+        }
+      ],
+      "subtotal": 59.9,
+      "desconto": 0,
+      "frete": 19.9,
+      "total": 79.8,
+      "cupom": null
+    }
+  }
+
+```Cenário 11: Aplicação de Cupom Válido no Carrinho
 -* Endpoint: `POST /api/carrinho/calcular`
 -* Objetivo: Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
 -* Payload Enviado:
