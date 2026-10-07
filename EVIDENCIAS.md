@@ -286,9 +286,9 @@
   }
 
 ### **Cenário 12: Tentativa de Confirmação de Pedido com Cupom Expirado**
-* Endpoint: `POST /api/pedidos`
-* Objetivo: Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
-* Payload Enviado:
+* **Endpoint:** `POST /api/pedidos`
+* **Objetivo:** Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
+* **Payload Enviado:**
 ```json
 {
   "cliente": {
