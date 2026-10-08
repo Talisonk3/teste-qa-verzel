@@ -55,3 +55,68 @@ O campo Frete continua exibindo a cobrança normal do frete, sem zerar o valor p
 Falha na validação do operador relacional na lógica de cálculo do frete no backend/frontend (*Boundary Value Analysis*)[cite: 9]. O código provavelmente utiliza uma condição de "maior que" (`subtotal > 200`) em vez de "maior ou igual a" (`subtotal >= 200`)[cite: 9].
 
 </details>
+
+---
+
+### [BUG-02] Endpoint de cálculo do carrinho aceita quantidade acima do limite permitido (7 unidades)
+
+* **ID do Bug:** BUG-02 (Referente ao Cenário 10: Tentativa de adicionar quantidade acima do limite permitido via API)
+* **Título:** Ausência de validação do limite máximo de 6 unidades por produto no endpoint `/api/carrinho/calcular`
+* **Severidade:** Média *(Inconsistência entre a regra do negócio/front-end e a validação do backend)*
+* **Prioridade:** Alta
+* **Componente:** Backend / API Rest (`POST /api/carrinho/calcular`)
+* **Ambiente:** Verzel Store API (`https://verzel-store.qa-test-verzel-store.workers.dev`)
+
+---
+
+#### 📝 Descrição do Problema
+A regra de negócio do e-commerce estabelece que o limite máximo permitido por produto é de **6 unidades**. Contudo, ao enviar uma requisição `POST` para o endpoint `/api/carrinho/calcular` contendo `quantidade: 7`, a API processa a solicitação com sucesso (`200 OK`) e calcula o valor total sem aplicar o bloqueio ou retornar o erro de validação esperado.
+
+<details>
+<summary><b>🔍 Clique aqui para ver detalhes, passos para reproduzir e evidências do BUG-02</b></summary>
+
+<br>
+
+#### 🔄 Passo a Passo para Reproduzir
+1. Abra o **Postman** (ou qualquer cliente HTTP).
+2. Configure uma requisição **POST** para a URL:  
+   `https://verzel-store.qa-test-verzel-store.workers.dev/api/carrinho/calcular`
+3. No corpo da requisição (`Body` -> `raw` -> `JSON`), insira o seguinte payload:
+    ```json
+    {
+      "itens": [
+        {
+          "produtoId": "P001",
+          "quantidade": 7
+        }
+      ]
+    }
+---
+
+#### 🎯 Comportamento Esperado
+A API deve recusar o cálculo e retornar um **Status Code `400 Bad Request`** ou **`422 Unprocessable Entity`** acompanhado de um código de erro de validação indicando que o limite máximo de 6 unidades foi excedido.
+
+---
+
+#### ❌ Comportamento Atual (Obtido)
+A API responde com **Status Code `200 OK`** e realiza o cálculo normal do subtotal e total para 7 unidades:
+
+```json
+{
+  "itens": [
+    {
+      "produtoId": "P001",
+      "nome": "Camiseta Essencial",
+      "precoUnitario": 59.9,
+      "quantidade": 7,
+      "total": 419.3
+    }
+  ],
+  "subtotal": 419.3,
+  "desconto": 0,
+  "frete": 0,
+  "freteGratis": true,
+  "valorFaltanteFreteGratis": 0,
+  "total": 419.3,
+  "cupom": null
+}
