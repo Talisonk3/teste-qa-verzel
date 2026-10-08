@@ -115,19 +115,21 @@
 
 ---
 
-### 🔹 Cenário 7: Validação da regra de frete grátis para compras de valor igual ou superior a R$ 200,00
+### 🔹 **Cenário 7: Validação da regra de frete grátis para compras de valor igual ou superior a R$ 200,00**
 
 **BDD / Gherkin:**
-- Dado que o subtotal do carrinho atinge exatamente R$ 200,00 (2 itens de R$ 100,00)
-- Quando o valor do frete é calculado
-- Então o valor do frete deve ser R$ 0,00 (Grátis) conforme a regra de valor igual ou superior a R$ 200,00
 
-* **Resultado:** Falha ❌ (Bug de Valor Limite - O sistema cobra frete com subtotal de R$ 200,00)
+* **Dado** que o subtotal do carrinho atinge exatamente R$ 200,00 (2 itens de R$ 100,00)
+* **Quando** o valor do frete é calculado
+* **Então** o valor do frete deve ser R$ 0,00 (Grátis) conforme a regra de valor igual ou superior a R$ 200,00
+* **Resultado:** Falha ❌ (Bug de Valor Limite - O sistema cobra frete com subtotal de R$ 200,00) — [Ver BUG-01](BUGS.md#bug-01)
 
 <details>
-<summary><b>🔍 Clique aqui para expandir a evidência do Cenário 7</b></summary>
+<summary>🔍 <b>Clique aqui para expandir a evidência do Cenário 7</b></summary>
 
-![Evidência Cenário 7](evidencias/cenario-07-frete-gratis-acima-limite.gif)
+<br>
+
+![Evidência do Cenário 7](./evidencias/cenario-07-frete-gratis-acima-limite.gif)
 
 </details>
 
