@@ -439,8 +439,12 @@
       "codigo": "CUPOM_EXPIRADO",
       "mensagem": "Cupom expirado.",
       "campo": "cupom"
-    }
+}
   }
+}
+```
+
+</details>
 
 ---
 
@@ -448,4 +452,9 @@
 
 Suíte de testes de API executada via Playwright Test Runner, obtendo **100% de aprovação (3 passed)**.
 
-![Relatório de Execução do Playwright](evidencias/api/playwright-report.png)
+<details>
+<summary>🔍 Clique aqui para expandir e ver a imagem</summary>
+
+![Relatório de Execução do Playwright](evidencias/playwright-report.png.png)
+
+</details>
