@@ -1,6 +1,6 @@
 # 🐛 Relatório de Bug (Bug Report)
 
-### [BUG-01] Cobrança indevida de frete para compras de valor exatamente igual a R$ 200,00
+<h3 id="bug-01">🐛 BUG-01: Cobrança indevida de frete para subtotal de R$ 200,00</h3>
 
 * **ID do Bug:** BUG-01 (Referente ao Cenário 7: Subtotal inferior a R$ 200,00 cobra frete fixo e informa valor faltante)
 * **Título:** Não aplicação da regra de Frete Grátis no valor limite exato de R$ 200,00
