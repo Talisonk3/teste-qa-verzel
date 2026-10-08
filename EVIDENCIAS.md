@@ -160,7 +160,14 @@
 ### **Cenário 09: Validação do Limite de Unidades por Produto**
 - **Endpoint:** `POST /api/carrinho/calcular`
 - **Objetivo:** Validar o comportamento da API ao solicitar a quantidade máxima permitida (6 unidades) de um item.
-- **Payload Enviado:**
+- **Status Code:** `200 OK`
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
+
   ```json
   {
     "itens": [
@@ -170,9 +177,7 @@
       }
     ]
   }
-
-* **Status Code:** `200 OK`
-* **Resultado:** Sucesso ✅
+```
 * **Resposta da API:**
 
   ```json
@@ -194,15 +199,24 @@
     "total": 359.4,
     "cupom": null
   }
+  
+</details>
 
   ---
+  
 ### Cenário 10: Tentativa de Adicionar Quantidade Acima do Limite Permitido
 
 * **Endpoint:** `POST /api/carrinho/calcular`
 * **Objetivo:** Validar o bloqueio da API ao solicitar uma quantidade acima do limite permitido (7 unidades).
-* **Payload Enviado:**
+* **Status Code:** `200 OK`
+* **Resultado:** Reprovado ❌ (Bug: A API aceitou a quantidade acima do limite sem retornar erro) — [Ver BUG-02](BUGS.md#bug-02)
 
-  ```json
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
+
+```json
   {
     "itens": [
       {
@@ -211,10 +225,9 @@
       }
     ]
   }
-  
-* **Status Code:** `200 OK`
-* **Resultado:** Reprovado ❌ (Bug: A API aceitou a quantidade acima do limite sem retornar erro)
-* **Resposta da API:**
+
+```
+- **Resposta da API:**
 
   ```json
   {
@@ -235,12 +248,22 @@
     "total": 419.3,
     "cupom": null
   }
+
+</details>
+
+  ---
   
-  ```
 ### **Cenário 11: Confirmação de Pedido com Sucesso**
 * **Endpoint:** `POST /api/pedidos`
 * **Objetivo:** Criar e confirmar um novo pedido enviando os dados válidos do cliente e os itens do carrinho.
-* **Payload Enviado:**
+* **Status Code:** `201 Created`
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
+
 ```json
 {
   "cliente": {
@@ -256,8 +279,6 @@
   ]
 }
 ```
-* **Status Code:** `201 Created`
-* **Resultado:** Sucesso ✅
 * **Resposta da API:**
   ```json
 
@@ -287,12 +308,20 @@
       "cupom": null
     }
   }
+  ```
+  </details>
   
 ---
-   ### Cenário 12: Tentativa de Criar Pedido sem E-mail do Cliente
+### **Cenário 12: Tentativa de Criar Pedido sem E-mail do Cliente**
 * **Endpoint:** `POST /api/pedidos`
 * **Objetivo:** Validar o bloqueio da API ao tentar criar um pedido omitindo o e-mail obrigatório do cliente.
-* **Payload Enviado:**
+* **Status Code:** `201 Created`
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
 
   ```json
   {
@@ -307,8 +336,7 @@
       }
     ]
   }
-* **Status Code:** `201 Created`
-* **Resultado:** Sucesso ✅
+ ```
 * **Resposta da API:**
  ```json
   {
@@ -323,11 +351,20 @@
     ]
   }
  ```
+</details>
+
 ---
 ### **Cenário 13: Aplicação de Cupom Válido no Carrinho**
 * **Endpoint:** `POST /api/carrinho/calcular`
 * **Objetivo:** Garantir que o cupom `BEMVINDO10` aplica corretamente os 10% de desconto sobre o valor dos produtos.
-* **Payload Enviado:**
+* **Status Code:** `200 OK`
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
+
 ```json
 {
   "itens": [
@@ -339,8 +376,6 @@
   "cupom": "BEMVINDO10"
 }
 ```
-* **Status Code:** `200 OK`
-* **Resultado:** Sucesso ✅
 * **Resposta da API:**
 
   ```json
@@ -365,12 +400,22 @@
       "aplicado": true
     }
   }
+ 
+</details>
 
 ---
+
 ### **Cenário 14: Tentativa de Confirmação de Pedido com Cupom Expirado**
 * **Endpoint:** `POST /api/pedidos`
 * **Objetivo:** Validar o bloqueio de criação de pedido ao utilizar um cupom expirado (`VERAO2026`).
-* **Payload Enviado:**
+* **Status Code:** `422 Unprocessable Entity`
+* **Resultado:** Sucesso ✅
+
+<details>
+<summary><b>Payload Enviado:</b> 🔍 Clique aqui para expandir</summary>
+
+<br>
+
 ```json
 {
   "cliente": {
@@ -387,8 +432,6 @@
   "cupom": "VERAO2026"
 }
 ```
-* **Status Code:** `422 Unprocessable Entity`
-* **Resultado:** Sucesso ✅
 * **Resposta da API:**
 ```json
   {
