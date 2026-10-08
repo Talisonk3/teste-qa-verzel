@@ -441,3 +441,11 @@
       "campo": "cupom"
     }
   }
+
+---
+
+## 🤖 Execução dos Testes Automatizados (Playwright)
+
+Suíte de testes de API executada via Playwright Test Runner, obtendo **100% de aprovação (3 passed)**.
+
+![Relatório de Execução do Playwright](evidencias/api/playwright-report.png)
