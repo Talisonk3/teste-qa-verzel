@@ -159,7 +159,7 @@
 
 ### **Cenário 09: Validação do Limite de Unidades por Produto**
 - **Endpoint:** `POST /api/carrinho/calcular`
-- **Objetivo:** Validar o comportamento da API ao solicitar a quantidade máxima permitida (6 unidades) de um item.
+- **Objetivo:** Validar o comportamento da API ao solicitar a quantidade máxima permitida (5 unidades) de um item.
 - **Status Code:** `200 OK`
 * **Resultado:** Sucesso ✅
 
@@ -173,7 +173,7 @@
     "itens": [
       {
         "produtoId": "P001",
-        "quantidade": 6
+        "quantidade": 5
       }
     ]
   }
@@ -187,7 +187,7 @@
         "produtoId": "P001",
         "nome": "Camiseta Essencial",
         "precoUnitario": 59.9,
-        "quantidade": 6,
+        "quantidade": 5,
         "total": 359.4
       }
     ],
