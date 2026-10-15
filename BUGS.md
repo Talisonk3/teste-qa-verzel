@@ -94,7 +94,7 @@ A regra de negócio do e-commerce estabelece que o limite máximo permitido por 
 ---
 
 #### 🎯 Comportamento Esperado
-A API deve recusar o cálculo e retornar um **Status Code `400 Bad Request`** ou **`422 Unprocessable Entity`** acompanhado de um código de erro de validação indicando que o limite máximo de 6 unidades foi excedido.
+A API deve recusar o cálculo e retornar um **Status Code `400 Bad Request`** ou **`422 Unprocessable Entity`** acompanhado de um código de erro de validação indicando que o limite máximo de 5 unidades foi excedido.
 
 ---
 
