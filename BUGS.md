@@ -61,7 +61,7 @@ Falha na validação do operador relacional na lógica de cálculo do frete no b
 ### [BUG-02] Endpoint de cálculo do carrinho aceita quantidade acima do limite permitido (7 unidades)
 
 * **ID do Bug:** BUG-02 (Referente ao Cenário 10: Tentativa de adicionar quantidade acima do limite permitido via API)
-* **Título:** Ausência de validação do limite máximo de 6 unidades por produto no endpoint `/api/carrinho/calcular`
+* **Título:** Ausência de validação do limite máximo de 5 unidades por produto no endpoint `/api/carrinho/calcular`
 * **Severidade:** Média *(Inconsistência entre a regra do negócio/front-end e a validação do backend)*
 * **Prioridade:** Alta
 * **Componente:** Backend / API Rest (`POST /api/carrinho/calcular`)
