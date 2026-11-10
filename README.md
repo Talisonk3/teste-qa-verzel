@@ -7,7 +7,7 @@
 * **Empresa Avaliadora:** Verzel
 * **Demanda / Card:** VZS-142 – Cupom de desconto e frete grátis
 * **Versão da Aplicação:** 2.3.0
-* **Data da Execução:** Outubro de 2026
+* **Data da Execução:** Março de 2026
 * **Ambiente de Testes:** [Verzel Store - QA Test](https://verzel-store.qa-test-verzel-store.workers.dev)
 
 ---
